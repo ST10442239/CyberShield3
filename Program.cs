@@ -138,7 +138,7 @@ namespace CyberShield3
 
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Shield.TypeEffect($"CyberShield: {response}\n");
-                Console.ResetColor();
+                Console.ResetColor(); 
             }
         }
     }
