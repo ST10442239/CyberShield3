@@ -1,0 +1,34 @@
+name: C# CI Pipeline
+
+on:
+ Push:
+  branches
+    - master
+pull_request:
+branches:
+- master
+
+jobs:
+ build:
+  runs-on: windows-latest
+
+steps:
+  - name: Checkout Repository
+    uses: actions/checkout@v4
+
+  - name: Setup MSBuild
+    uses: microsoft/setup-msbuild@v1
+
+  - name: Setup NuGet
+    uses: NuGet/setup-nuget@v1
+
+  - name: Restore NuGet packages
+    run: dotnet restore
+    "ChatbotApp1.sln"
+
+   - name: Check Code Formatting
+     run: dotnet format --verify-no-changes "ChatbotApp1.sln" || exit 1
+
+   - name: Build Project
+     run: msbuild
+     "ChatbotApp1.sln" / p:Configuration=Release
