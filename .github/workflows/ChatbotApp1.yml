@@ -15,12 +15,15 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-       
+
+      - name: Debug File Structure
+        run: dir /s /b
         
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '9.0.102'
+
 
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1
@@ -29,10 +32,10 @@ jobs:
         uses: NuGet/setup-nuget@v1
 
       - name: Restore NuGet packages
-        run: nuget restore "ChatbotApp1.sln"
+        run: nuget restore "CyberShield3/ChatbotApp1.sln"
 
       - name: Check & Fix Code Formatting
-        run: dotnet format "ChatbotApp1.sln" || echo "Code formatting failed, but continuing"
+        run: dotnet format "CyberShield3/ChatbotApp1.sln" || echo "Code formatting failed, but continuing"
         continue-on-error: true
 
       - name: Build Project
