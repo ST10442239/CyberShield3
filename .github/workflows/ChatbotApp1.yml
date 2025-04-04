@@ -27,8 +27,8 @@ jobs:
       - name: Setup NuGet
         uses: NuGet/setup-nuget@v1
 
-      - name: Restore Dependencies
-        run: dotnet restore "ChatbotApp1.sln"
+      - name: Restore NuGet packages
+        run: nuget restore "ChatbotApp1.sln"
 
       - name: Check & Fix Code Formatting
         run: dotnet format "ChatbotApp1.sln" || echo "Cod eformatting failed, but continuing"
