@@ -45,7 +45,7 @@ jobs:
       - name: Change to Project Directory
         run: cd ChatbotApp1
 
-      - name: Build Project
+      - name: Build Solution
         run: msbuild "ChatbotApp1.sln" /p:Configuration=Release /p:Platform="Any CPU"
 
       
