@@ -33,14 +33,14 @@ jobs:
         uses: NuGet/setup-nuget@v1
 
       - name: Restore NuGet packages
-        run: nuget restore "CyberShield3/ChatbotApp1.sln"
+        run: nuget restore "ChatbotApp1.sln"
 
       - name: Check & Fix Code Formatting
-        run: dotnet format "CyberShield3/ChatbotApp1.sln" || echo "Code formatting failed, but continuing"
+        run: dotnet format "ChatbotApp1.sln" || echo "Code formatting failed, but continuing"
         continue-on-error: true
 
       - name: Build Project
-        run: msbuild "CyberShield3/ChatbotApp1.sln" /p:Configuration=Release /p:Platform="Any CPU"
+        run: msbuild "ChatbotApp1.sln" /p:Configuration=Release /p:Platform="Any CPU"
 
       
 
