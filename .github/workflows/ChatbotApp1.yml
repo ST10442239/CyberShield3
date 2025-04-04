@@ -42,6 +42,9 @@ jobs:
         run: dotnet format "ChatbotApp1.sln" || echo "Code formatting failed, but continuing"
         continue-on-error: true
 
+      - name: Change to Project Directory
+        run: cd ChatbotApp1
+
       - name: Build Project
         run: msbuild "ChatbotApp1.sln" /p:Configuration=Release /p:Platform="Any CPU"
 
