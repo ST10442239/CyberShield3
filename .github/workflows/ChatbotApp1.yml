@@ -28,7 +28,7 @@ jobs:
         uses: NuGet/setup-nuget@v1
 
       - name: Restore NuGet packages
-        run: nuget restore "ChatbotApp1.sln"
+        run: dotnet restore "ChatbotApp1.sln"
 
       - name: Check & Fix Code Formatting
         run: dotnet format "ChatbotApp1.sln"
