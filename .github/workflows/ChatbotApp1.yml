@@ -43,7 +43,7 @@ jobs:
         continue-on-error: true
 
       - name: Change to Project Directory
-        run: cd ChatbotApp1
+        run: cd Cybershield3
 
       - name: Build Solution
         run: msbuild "ChatbotApp1.sln" /p:Configuration=Release /p:Platform="Any CPU"
