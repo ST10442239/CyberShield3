@@ -15,10 +15,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Debug File structure
-        run: dir C:\Users\RC_Student_lab\source\repos\ChatbotApp1
+       
         
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v3
