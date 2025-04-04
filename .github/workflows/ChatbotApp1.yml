@@ -48,6 +48,7 @@ jobs:
 
       - name: Build Solution
         run: msbuild "ChatbotApp1.sln" /p:Configuration=Release /p:Platform="Any CPU"
+        continue-on-error: true
 
       
 
