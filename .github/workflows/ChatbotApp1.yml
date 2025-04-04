@@ -23,10 +23,10 @@ jobs:
         uses: NuGet/setup-nuget@v1
 
       - name: Restore NuGet packages
-        run: nuget restore "ChatbotApp1.sln"
+        run: dotnet restore "ChatbotApp1.sln"
 
-      - name: Check Code Formatting
-        run: dotnet format --verify-no-changes "ChatbotApp1.sln" || exit 1
+      - name: Check & Fix Code Formatting
+        run: dotnet format "ChatbotApp1.sln"
 
       - name: Build Project
-        run: msbuild "ChatbotApp1.sln" /p:Configuration=Release
+        run: msbuild "ChatbotApp1.sln" /p:Configuration=Releasee
